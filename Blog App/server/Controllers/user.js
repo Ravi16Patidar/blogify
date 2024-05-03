@@ -1,10 +1,12 @@
 import UserModal from "../Models/userModel.js";
+import bcrypt from 'bcrypt'
 export const signup = async (req, res) => {
+  const newPassword=await bcrypt.hash(req.body.password,10)
   try {
     const userData = {
       fullname: req.body.fullname,
       email: req.body.email,
-      password: req.body.password,
+      password: newPassword,
     };
     const result = await UserModal.create(userData);
     return res
