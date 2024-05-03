@@ -1,5 +1,6 @@
 import UserModal from "../Models/userModel.js";
 import bcrypt from 'bcrypt'
+import jwt from 'jsonwebtoken'
 export const signup = async (req, res) => {
   const newPassword=await bcrypt.hash(req.body.password,10)
   try {
@@ -23,12 +24,15 @@ export const login=async(req,res)=>{
   try{
       const {email,password}=req.body;
       const userData=await UserModal.findOne({email:email})
+      console.log(userData)
       if(userData)
       {
         bcrypt.compare(password,userData.password, function(err, result) {
         if(result)
          {
-          return res.status(200).json({msg:"User login Successfully",status:200})
+          const payloadData={userData}
+          const token=jwt.sign(payloadData,"thisissercretkey")
+          return res.status(200).json({token:token,msg:"User login Successfully",status:200})
          }
          else{
           return res.status(400).json({msg:"password incorrect",status:400})
