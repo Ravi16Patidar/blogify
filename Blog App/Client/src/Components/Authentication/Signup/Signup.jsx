@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import './Signup.css'
+import { Link } from "react-router-dom";
 
 export default function Signup() {
     return (
@@ -19,7 +20,8 @@ export default function Signup() {
                     <input type="password" id="password" placeholder="Enter your password" className="input-field"/>
                 </div>
                 <button className="btn">Sign Up</button>
-                <a href="#" className="link">Already have an account? Log in</a>
+                <Link to="/login" className="link">Already have an account? Log in</Link>
+
             </div>
         </Fragment>
     )

@@ -1,0 +1,23 @@
+/* 404.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+  }
+  
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 50px 20px;
+    text-align: center;
+  }
+  
+  .heading {
+    font-size: 48px;
+    color: #333;
+  }
+  
+  .message {
+    font-size: 24px;
+    color: #666;
+  }
+  

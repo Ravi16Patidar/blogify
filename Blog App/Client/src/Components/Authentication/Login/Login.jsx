@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import './Login.css'
+import { Link } from "react-router-dom";
 
 export default function Widget() {
     return (
@@ -16,7 +17,8 @@ export default function Widget() {
                 </div>
                 <button className="btn">Log in</button>
                 <a href="#" className="link forgot-password">Forgot your password?</a>
-                <a href="#" className="link register">Don't have an account? Register</a>
+                <Link to="/" className="link">Don't have an account? Register</Link>
+
             </div>
         </Fragment>
     )
