@@ -5,11 +5,12 @@ import databaseConnection from "./connection.js";
 const app = express();
 const PORT = process.env.PORT || 4200;
 
+app.use(cors());
 // connection
 databaseConnection("mongodb://localhost:27017/blogify")
 app.use(express.json())
-app.use(router);
-app.use(cors());    
+app.use(router)
+
 
 app.listen(PORT, (err) => {
   if (err) {
