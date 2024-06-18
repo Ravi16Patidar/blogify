@@ -35,6 +35,7 @@ export default function Signup() {
     }
     return (
         <Fragment>
+            <div className="signup-main-container">
             <div className="signup-container">
                 <h2 className="signup-title">Sign Up</h2>
                 <div className="form-group">
@@ -52,6 +53,7 @@ export default function Signup() {
                 <button className="btn" onClick={handleSubmit}>Sign Up</button>
                 <Link to="/login" className="link">Already have an account? Log in</Link>
 
+            </div>
             </div>
         </Fragment>
     )

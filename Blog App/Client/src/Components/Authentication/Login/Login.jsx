@@ -38,6 +38,7 @@ export default function Widget() {
   };
   return (
     <Fragment>
+         <div className="login-main-container">
       <div className="login-container">
         <h2 className="login-title">Log in</h2>
         <div className="form-group">
@@ -73,6 +74,7 @@ export default function Widget() {
         <Link to="/signup" className="link">
           Don't have an account? Register
         </Link>
+      </div>
       </div>
     </Fragment>
   );

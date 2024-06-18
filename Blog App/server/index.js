@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import router from "./Router/userRoutes.js";
 import databaseConnection from "./connection.js";
+import multer from 'multer'
 const app = express();
 const PORT = process.env.PORT || 4200;
 
@@ -19,3 +20,4 @@ app.listen(PORT, (err) => {
     console.log(`Server started at http://localhost:${PORT}`);
   }
 });
+

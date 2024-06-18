@@ -1,8 +1,11 @@
 import React from 'react'
+import BlogCreation from '../BlogCreation/BlogCreation'
 
 const Dashboard = () => {
   return (
-    <div>Dashboard</div>
+    <div>
+      <BlogCreation/>
+    </div>
   )
 }
 

@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import './App.css'
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Login from './Components/Authentication/Login/Login';
 import Signup from './Components/Authentication/Signup/Signup';
 import NotFoundPage from './Components/404/NotFoundPage';
 import Dashboard from './Components/Dashboard/Dashboard';
+import BlogCreation from './Components/BlogCreation/BlogCreation'
 
 function App() {
   const [token, setToken] = useState('');
@@ -14,6 +16,7 @@ function App() {
     if (storedToken) {
       setToken(storedToken);
     }
+
     setLoading(false);
   }, []);
 
@@ -24,7 +27,7 @@ function App() {
 
   return (
     <Router>
-      <Routes>
+      <Routes>  
         {/* Redirect to Dashboard if token exists, else to Login */}
         <Route
           path="/"
@@ -36,6 +39,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="*" element={<NotFoundPage />} />
+        <Route path="/blogCreation" element={<BlogCreation />} />
       </Routes>
     </Router>
   );
